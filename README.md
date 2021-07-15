@@ -89,8 +89,7 @@ A unity package file containing a sample project and SDK is provided.
 
 * Android
 
-    -  If there is another AndroidManifest.xml file in the project and the AndroidManifest.xml file is included in the .aar package of the ZenaAD,   
-    the SDK will be automatically merged at build time.   
+    -  If there is another AndroidManifest.xml file in the project and the AndroidManifest.xml file is included in the .aar package of the ZenaAD, the SDK will be automatically merged at build time.   
     Permission currently being used in ZenaAD:
     ```
     <uses-permission android:name="android.permission.INTERNET" />
