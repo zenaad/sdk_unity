@@ -19,7 +19,6 @@
     * 광고 보이기
     * 배너 위치 지정
     * 배너 제거
-    * 제나애드 페이지 (가상자산)
     * 코드 샘플
     * 콜백 목록
     * 콜백 매개변수 목록
@@ -161,31 +160,6 @@
     ```c#
     public void Client.RemoveBanner( );
     ```
-<br/>
-
-* 제나애드 페이지 (가상자산)
-
-    유저에게 적립된 포인트를 확인/출금 할 수 있는 창으로 게임내 옵션창에 호출 가능한 메뉴를 제공해야 합니다.   
-    메뉴의 모양 및 위치는 게임내 옵션창에 자유롭게 노출합니다. (적용 예시 하단에 첨부되어 있는 버튼 사용 가능)
-    ```c#
-    public void Client.CreatePointWindow( );
-    ```
-    <br/>
-
-    - 적용 예시
-
-        <img src="Image/sample.JPG" width="371px" height="387px" title="적용 예시" alt="sampleImage" ></img>
-
-    <br/>
-
-    - 버튼 다운로드
-
-        <a href="https://github.com/zenaad/zenaadresources/blob/main/adIcon/wallet_c.png" target="_blank">
-        <img src="https://github.com/zenaad/zenaadresources/blob/main/adIcon/wallet_c.png?raw=true" width="150px" height="150px" title="버튼 이미지" alt="ButtonImgC"></a>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="https://github.com/zenaad/zenaadresources/blob/main/adIcon/wallet_w.png" target="_blank">
-        <img src="https://github.com/zenaad/zenaadresources/blob/main/adIcon/wallet_w.png?raw=true" width="150px" height="150px" title="버튼 이미지" alt="ButtonImgW"></a>
-    
 <br/>
 
 * 코드 샘플
