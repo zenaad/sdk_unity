@@ -101,6 +101,12 @@ A unity package file containing a sample project and SDK is provided.
     -keep interface com.rhaon.aos_zena2d_sdk.**
     ```
 
+    - Crash when video ad is shown:   
+    Create the \Plugins\Android\gradleTemplate.properties file. Please add the options below here.
+    ```
+    android.enableDexingArtifactTransform=false
+    ```
+
 * iOS
 
     -  After building to allow iOS network use, add and change the following key values in the info.plist file in the generated xcode project.

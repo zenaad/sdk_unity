@@ -101,6 +101,12 @@
     -keep interface com.rhaon.aos_zena2d_sdk.**
     ```
 
+    - 동영상 광고가 보여질 때 크래시가 나는 경우 :   
+    \Plugins\Android\gradleTemplate.properties 파일을 생성합니다. 여기에 아래 옵션을 추가해 주세요.
+    ```
+    android.enableDexingArtifactTransform=false
+    ```
+
 * iOS
 
     - 네트워크를 사용하기 위해 iOS 로 빌드 후, 생성된 xcode 프로젝트에서 info.plist 파일에 아래의 키값을 추가, 변경이 필요합니다.
