@@ -18,7 +18,9 @@
     * Confirm ad ready
     * Show Ad
     * Position the banner
+    * Size the banner
     * Remove banner
+    * Check version
     * Code Sample
     * IListenerZena2d Callback
     * Callback Parameter List
@@ -97,8 +99,13 @@ A unity package file containing a sample project and SDK is provided.
     - If ads are not visible after applying Proguard:   
     If you have checked User Proguard File in Publishing Setting, Assets\Plugins\Android\proguard-user.txt should exist. Add the following here.
     ```
-    -keep class com.rhaon.aos_zena2d_sdk.**
-    -keep interface com.rhaon.aos_zena2d_sdk.**
+        -keep class com.rhaon.aos_zena2d_sdk.Zena2d {
+            public <methods>;
+        }
+
+        -keep interface com.rhaon.aos_zena2d_sdk.listener.IListenerZena2d {
+            public <methods>;
+        }
     ```
 
     - Crash when video ad is shown:   
@@ -162,9 +169,23 @@ A unity package file containing a sample project and SDK is provided.
     ```
 <br/>
 
+* Size the banner
+    ```c#
+    public void Client.SetBannerSize( BannerSize );
+    // BannerSize : BannerSize.ADAPTIVE, BannerSize.FIXED
+    // (Banner Size : fit, default)
+    ```
+<br/>
+
 * Remove banner
     ```c#
     public void Client.RemoveBanner( );
+    ```
+<br/>
+
+* Check version
+    ```c#
+    public string Client.GetVersion( );
     ```
 <br/>
 
@@ -174,7 +195,9 @@ A unity package file containing a sample project and SDK is provided.
     
     void Start ( ) {
         client = Zena2dClient.BuildClient( );
+        client.SetBannerSize(BannerSize.ADAPTIVE);
         client.setBannerGravity(BannerMode.BOTTOM);
+
         client.callbackInit = OnInit;
         client.callbackError = OnError;
         client.callbackReady = OnReady;

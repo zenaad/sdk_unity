@@ -18,7 +18,9 @@
     * 광고 준비확인
     * 광고 보이기
     * 배너 위치 지정
+    * 배너 크기 지정
     * 배너 제거
+    * 버전 확인
     * 코드 샘플
     * 콜백 목록
     * 콜백 매개변수 목록
@@ -97,8 +99,13 @@
     - Proguard 적용 후 광고가 보이지 않을 경우 :   
     Publishing Setting – User Proguard File 체크를 했다면 Assets\Plugins\Android\proguard-user.txt 파일이 존재합니다. 여기에 아래 옵션을 추가해 주세요.
     ```
-    -keep class com.rhaon.aos_zena2d_sdk.**
-    -keep interface com.rhaon.aos_zena2d_sdk.**
+        -keep class com.rhaon.aos_zena2d_sdk.Zena2d {
+            public <methods>;
+        }
+
+        -keep interface com.rhaon.aos_zena2d_sdk.listener.IListenerZena2d {
+            public <methods>;
+        }
     ```
 
     - 동영상 광고가 보여질 때 크래시가 나는 경우 :   
@@ -157,8 +164,16 @@
 * 배너 위치 지정
     ```c#
     public void Client.SetBannerGravity( BannerMode );
-    // BannerMode : BannerMode.BOTTOM, BannerMode.TOP, BannerMode.SOFT_KEY
-    // (배너위치 :하단, 상단, 소프트키 위)
+    // BannerMode : BannerMode.BOTTOM, BannerMode.TOP
+    // (배너위치 :하단, 상단)
+    ```
+<br/>
+
+* 배너 크기 지정
+    ```c#
+    public void Client.SetBannerSize( BannerSize );
+    // BannerSize : BannerSize.ADAPTIVE, BannerSize.FIXED
+    // (배너크기 :화면 맞춤, 기본크기)
     ```
 <br/>
 
@@ -168,13 +183,21 @@
     ```
 <br/>
 
+* 버전 확인
+    ```c#
+    public string Client.GetVersion( );
+    ```
+<br/>
+
 * 코드 샘플
     ```c#
     private Client client;
     
     void Start ( ) {
         client = Zena2dClient.BuildClient( );
+        client.SetBannerSize(BannerSize.ADAPTIVE);
         client.setBannerGravity(BannerMode.BOTTOM);
+
         client.callbackInit = OnInit;
         client.callbackError = OnError;
         client.callbackReady = OnReady;
