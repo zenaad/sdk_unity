@@ -165,7 +165,7 @@
     ```c#
     public void Client.SetBannerGravity( BannerMode );
     // BannerMode : BannerMode.BOTTOM, BannerMode.TOP
-    // (배너위치 :하단, 상단)
+    // (배너위치 : 하단, 상단)
     ```
 <br/>
 
@@ -173,7 +173,7 @@
     ```c#
     public void Client.SetBannerSize( BannerSize );
     // BannerSize : BannerSize.ADAPTIVE, BannerSize.FIXED
-    // (배너크기 :화면 맞춤, 기본크기)
+    // (배너크기 : 화면 맞춤, 기본크기)
     ```
 <br/>
 
